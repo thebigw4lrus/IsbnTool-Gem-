@@ -34,12 +34,4 @@ module FunctionLib
       end
     end
   end
-
-  def random(digit)
-    r = Random.new
-    value = r.rand(0..("9"*digit).to_i).to_s
-    (digit - value.length).times do value << "0" end 
-    value
-  end
-
 end
