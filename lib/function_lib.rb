@@ -1,3 +1,9 @@
+=begin
+  * Name: FunctionLib
+  * Description: Module shared across both, Faker and Hyphenizer class 
+  * Author: Javier A. Contreras V.
+  * Date: Jul 19, 2013
+=end 
 module FunctionLib
   require 'xml'
   require 'open-uri'

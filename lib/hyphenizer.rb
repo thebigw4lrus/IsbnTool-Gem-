@@ -1,3 +1,9 @@
+=begin
+  * Name: Hyphenizer
+  * Description: Class for hyphenize isbn numbers
+  * Author: Javier A. Contreras V.
+  * Date: Jul 19, 2013
+=end 
 module IsbnsTools
 class Hyphenizer
   require 'function_lib'

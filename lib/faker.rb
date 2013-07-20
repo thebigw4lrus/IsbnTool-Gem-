@@ -1,3 +1,9 @@
+=begin
+  * Name: Faker
+  * Description: Class for generate isbn valid samples
+  * Author: Javier A. Contreras V.
+  * Date: Jul 19, 2013
+=end 
 module IsbnsTools
 class Faker
   require 'function_lib'
