@@ -16,7 +16,17 @@ module FunctionLib
     parse_xml("EAN.UCCPrefixes", "EAN.UCC", h_prefixes, xml_address)
     parse_xml("RegistrationGroups", "Group", h_reg_groups, xml_address)
   end
-
+  def random(*args)
+    args[0].nil?? number = 5 : number = args[0]
+    missed_digits, r = number.to_i, Random.new
+    value = r.rand(0...("9"*missed_digits).to_i).to_s
+    value << "0"*(missed_digits - value.length)
+  end 
+  def checksum_generator(number)
+    sum = 0
+    0.upto(11) { |index| sum += number[index].chr.to_i * (index % 2 == 0 ? 1 : 3) }
+    (10-sum.remainder(10)) == 10 ? "0" : (10-sum.remainder(10)).to_s
+   end
   def parse_xml(str_root, str_entry, base_hash, xml_address)
     xml = open(xml_address).read if xml.nil?
     parser, parser.string = XML::Parser.new, xml

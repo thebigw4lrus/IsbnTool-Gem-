@@ -3,10 +3,9 @@ class Hyphenizer
   require 'function_lib'
   include FunctionLib 
 
-  def initialize()
-    @@h_prefixes = Hash.new
-    @@h_reg_groups = Hash.new
-    load_xml(@@h_prefixes, @@h_reg_groups, XML_ADDRESS)
+  def initialize(*args)
+    @@h_prefixes, @@h_reg_groups = Hash.new, Hash.new
+    (args[0].nil?)?  load_xml(@@h_prefixes, @@h_reg_groups, XML_ADDRESS) : (@@h_prefixes, @@h_reg_groups= args[0], args[1])
   end
   def hyphenize(number)
     number =  number.to_s
