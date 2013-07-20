@@ -27,6 +27,5 @@ class Hyphenizer
     third_length = 9 - first_length - second_length 
     number_hyphenized << "-" + number[3+first_length+second_length, third_length] + "-" + number[12, 12]
   end
-
 end
 end

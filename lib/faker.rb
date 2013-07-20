@@ -8,15 +8,12 @@ module IsbnsTools
 class Faker
   require 'function_lib'
   require 'hyphenizer'
-  
   include FunctionLib 
-  
   
   def initialize()
     @@h_prefixes, @@h_reg_groups = Hash.new, Hash.new
     load_xml(@@h_prefixes, @@h_reg_groups, XML_ADDRESS)
   end
-
   def fake_isbn(*args)
     p_start = args[0][:start].to_s unless args[0].nil?
     p_range = args[0][:range].to_s unless args[0].nil?
@@ -29,6 +26,5 @@ class Faker
     clean_number = p_start.to_s << p_range.to_s
     Hyphenizer.new(@@h_prefixes, @@h_reg_groups).hyphenize(clean_number << checksum_generator(clean_number))
   end
-
 end
 end

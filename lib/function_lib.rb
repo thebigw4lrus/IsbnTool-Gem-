@@ -10,7 +10,6 @@ module FunctionLib
   XML_ADDRESS = "http://www.isbn-international.org/agency?rmxml=1"
   IBSN_INVALID = "Ibsn Number is invalid"
 
-  
   def resolve_length(prefix, five_digits, base_hash)
     value = nil
     base_hash[prefix].each do |range|
