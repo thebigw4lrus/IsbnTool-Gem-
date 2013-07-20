@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.description = "Isbn Tool"
   s.authors     = ["Javier Contreras"]
   s.email       = 'jcontreras000@gmail.com'
-  s.files       = ["lib/hyphenizer.rb", "lib/function_lib.rb"]
+  s.files       = ["lib/hyphenizer.rb", "lib/function_lib.rb", "lib/faker.rb"]
   s.homepage    =
     'http://github.com/jcontreras000/isbnstools'
 end
