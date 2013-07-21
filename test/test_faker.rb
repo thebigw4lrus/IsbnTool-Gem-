@@ -8,18 +8,24 @@ require 'test/unit'
 require 'faker'
 
 class TestFaker < Test::Unit::TestCase
-   
-  def test_faker
-    faker = IsbnsTools::Faker.new 
+  
+  def setup
+     @faker = IsbnsTools::Faker.new 
+  end
+  
+  def test_with_no_parameters_faker
     10.times do 
-      assert_equal is_valid_isbn13?(faker.fake_isbn()), true 
-    end
-     assert_equal is_valid_isbn13?(faker.fake_isbn(start: 9783, range: 635)), true 
-     assert_equal is_valid_isbn13?(faker.fake_isbn(start: 9783, range: 635)), true 
-     assert_equal is_valid_isbn13?(faker.fake_isbn(start: 978970, range: 3245)), true 
-     assert_equal is_valid_isbn13?(faker.fake_isbn(start: 978971, range: 12)), true 
-     assert_equal is_valid_isbn13?(faker.fake_isbn(start: 978975, range: 6)), true 
-     assert_equal is_valid_isbn13?(faker.fake_isbn(start: 9787, range: 4)), true 
+      assert_equal is_valid_isbn13?(@faker.fake_isbn()), true 
+    end 
+  end
+  
+  def test_with_parameters_faker
+     assert_equal is_valid_isbn13?(@faker.fake_isbn(start: 9783, range: 635)), true 
+     assert_equal is_valid_isbn13?(@faker.fake_isbn(start: 9783, range: 635)), true 
+     assert_equal is_valid_isbn13?(@faker.fake_isbn(start: 978970, range: 3245)), true 
+     assert_equal is_valid_isbn13?(@faker.fake_isbn(start: 978971, range: 12)), true 
+     assert_equal is_valid_isbn13?(@faker.fake_isbn(start: 978975, range: 6)), true 
+     assert_equal is_valid_isbn13?(@faker.fake_isbn(start: 9787, range: 4)), true
   end
   
   #The next 2 functions were taken from isbn-tools-0.1.0 gem 

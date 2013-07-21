@@ -12,7 +12,7 @@ class TestHyphenizer < Test::Unit::TestCase
   
   def setup
     #there is a (1-1) concordance betweens these two arrays. 
-    @@test_cases_with_dashes = 
+    @test_cases_with_dashes = 
     ["978-3-635-91189-7", "978-3-635-30914-4", "978-3-635-03219-6", "978-3-635-21173-7", "978-3-635-52209-3", "978-3-635-09090-5", 
      "978-3-635-23020-2", "978-3-635-40403-0", "978-3-635-39471-3", "978-3-635-68368-8", "978-3-635-87662-2", "978-3-635-11605-6", 
      "978-3-635-44462-3", "978-3-635-77417-1", "978-3-635-80413-7", "978-3-635-77551-2", "978-3-635-99338-1", "978-3-635-32637-0", 
@@ -31,7 +31,7 @@ class TestHyphenizer < Test::Unit::TestCase
      "978-3-635-82136-3", "978-3-635-07441-7", "978-3-635-57828-1", "978-3-635-57306-4", "978-3-635-31655-5", "978-3-635-83073-0", 
      "978-3-635-98867-7", "978-3-635-19034-6", "978-3-635-27442-8", "978-3-635-14722-7"]
     
-    @@test_cases_with_no_dashes = 
+    @test_cases_with_no_dashes = 
     ["9783635911897", "9783635309144", "9783635032196", "9783635211737", "9783635522093", "9783635090905", 
      "9783635230202", "9783635404030", "9783635394713", "9783635683688", "9783635876622", "9783635116056", 
      "9783635444623", "9783635774171", "9783635804137", "9783635775512", "9783635993381", "9783635326370", 
@@ -53,8 +53,8 @@ class TestHyphenizer < Test::Unit::TestCase
   end
   def test_hyphenize
     hyphenizer = IsbnsTools::Hyphenizer.new
-    @@test_cases_with_no_dashes.length.times do |index| 
-      assert_equal hyphenizer.hyphenize(@@test_cases_with_no_dashes[index]), @@test_cases_with_dashes[index]  
+    @test_cases_with_no_dashes.length.times do |index| 
+      assert_equal hyphenizer.hyphenize(@test_cases_with_no_dashes[index]), @test_cases_with_dashes[index]  
     end
   end
 
