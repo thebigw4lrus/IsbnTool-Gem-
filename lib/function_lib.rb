@@ -33,8 +33,8 @@ module FunctionLib
     (10-sum.remainder(10)) == 10 ? "0" : (10-sum.remainder(10)).to_s
    end
   def parse_xml(str_root, str_entry, base_hash, xml_address)
-    @xml = open(xml_address).read if @xml.nil?
-    parser, parser.string = XML::Parser.new, @xml
+    xml = open(xml_address).read if xml.nil?
+    parser, parser.string = XML::Parser.new, xml
     doc, posts = parser.parse, []
     doc.root.find("./"+str_root).each do |entry|
       entry.find(str_entry).each do |entry2|
