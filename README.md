@@ -34,5 +34,6 @@ irb> faker.fake_isbn(start: 9783, range: 635)
 => 978-3-635-26694-2
 
 
-
-
+NOTE:
+Since this gem reads the official isbn XML definition, the internet connection is required in order to test and 
+run it.
